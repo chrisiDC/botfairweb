@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "InsertConfig";
+    Layout = "~/Views/Shared/_LayoutPartial.cshtml";
+}
+<script type="text/javascript" src="~/js/configuration/insertconfig.js"></script>
+<script type="text/javascript" src="~/js/configuration/validation.js"></script>
+<script type="text/javascript" src="~/js/configuration/model.js"></script>
+<script type="text/javascript" src="~/lib/huc.tools.js"></script>
+<link type="text/css" rel="Stylesheet" href="~/css/jquery.validity.css" />
+
+
+<style type="text/css">
+    label.error
+    {
+        color: #fff;
+        margin-left: 2px;
+        background-position: left center;
+        background-repeat: no-repeat;
+        padding: 2px;
+        padding-left: 18px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+    }
+    .fail {
+        border-color: red
+    }
+</style>
+<table>
+    <tr>
+        <td>
+            <span>HotMarketsSeconds</span>
+        </td>
+        <td>
+            <input type="text" id="hotmarketsseconds" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <span>Percentage</span>
+        </td>
+        <td>
+            <input type="text" id="percentage" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <span>RiskValue</span>
+        </td>
+        <td>
+            <input type="text" id="riskValue" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <span>NewMarketsPeriod</span>
+        </td>
+        <td>
+            <input type="text" id="newMarketsPeriod" />
+        </td>
+    </tr>
+</table>
+<button type="button" onclick="javascript:InsertConfig();">
+    Save</button>

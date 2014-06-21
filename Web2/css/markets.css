@@ -1,0 +1,23 @@
+﻿#splitter
+{
+    height: 1024px;
+    width: 1024px;
+}
+
+#markets
+{
+    height: 100%;
+    width: 100%;
+}
+#selections
+{
+    height: 100%;
+    width: 100%;
+}
+#xxx
+{
+    background-color: red;
+}
+.pulsate
+{
+}

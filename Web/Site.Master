@@ -1,0 +1,88 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Web.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <script src="Scripts/JSCal/jscal2.js"></script>
+    <script src="Scripts/JSCal/lang/de.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/Styles/JSCal/jscal2.css" />
+    <link rel="stylesheet" type="text/css" href="~/Styles/JSCal/border-radius.css" />
+    <link rel="stylesheet" type="text/css" href="~/Styles/JSCal/win2k/win2k.css" />
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                    BotFair Web
+                    <asp:Label ID="LBL_Version" runat="server" />
+                    &nbsp
+                    <asp:Label ID="LBL_ERROR" EnableViewState="false" ForeColor="Red" runat="server" />
+                </h1>
+            </div>
+            <div class="loginDisplay">
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                        [<a href="~/Account/Login.aspx" id="HeadLoginStatus" runat="server">Log In</a> ]
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        Welcome <span class="bold">
+                            <asp:LoginName ID="HeadLoginName" runat="server" />
+                        </span>! [
+                        <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out"
+                            LogoutPageUrl="~/" />
+                        ]
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+            <div class="clear hideSkiplink">
+                <table>
+                    <tr>
+                        <td>
+                            <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="False"
+                                IncludeStyleBlock="False" Orientation="Horizontal" DataSourceID="SiteMapDataSource1">
+                            </asp:Menu>
+                            <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="False" />
+                        </td>
+                        <td>
+                            <asp:TextBox runat="server" ID="TB_GlobalDate" />
+                            <asp:CustomValidator runat="server" ID="VD_GlobalDate" CssClass="validators" Display="Dynamic"
+                                ErrorMessage="*" ControlToValidate="TB_GlobalDate" OnServerValidate="ValidateGlobalDate" />
+                        </td>
+                        <td>
+                            <button id="f_btn1">
+                                ...</button><br />
+                            <script type="text/javascript">//<![CDATA[
+                                Calendar.setup({
+                                    inputField: "TB_GlobalDate",
+                                    trigger: "f_btn1",
+                                    onSelect: function () { this.hide(); document.getElementById('BT_ChangeDate').click(); },
+                                    showTime: 12,
+                                    dateFormat: "%d.%m.%Y"
+                                });
+    //]]></script>
+                        </td>
+                        <td>
+                            <asp:Button runat="server" ID="BT_ChangeDate" OnClick="BT_ChangeDate_Click" Text="Set"
+                                CausesValidation="true" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+    </div>
+    </form>
+</body>
+</html>

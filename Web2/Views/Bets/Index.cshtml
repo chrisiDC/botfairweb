@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript" src="~/js/bets/model.js"></script>
+<script type="text/javascript" src="~/js/bets/bets.js"></script>
+
+
+<table id="bets" data-bind="wijgrid: { data: bets }"></table>

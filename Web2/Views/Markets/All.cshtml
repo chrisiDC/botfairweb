@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "SelectionTrackView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/css/markets.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="~/js/markets/allmarketsmodel.js"></script>
+<script type="text/javascript" src="~/js/markets/allmarkets.js"></script>
+
+
+<div>
+    <table id="markets" data-bind="wijgrid: { data: markets }">
+    </table>
+</div>

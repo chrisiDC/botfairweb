@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript" src="~/js/configuration/configuration.js"></script>
+<script type="text/javascript" src="~/js/configuration/validation.js"></script>
+<script type="text/javascript" src="~/js/configuration/model.js"></script>
+<script type="text/javascript" src="~/lib/huc.tools.js"></script>
+<br/>
+<button type="button"  onclick="javascript:viewModel.save();">Save Changes</button><button type="button"  onclick="javascript:ShowInsertDialog();">Add New</button>
+<br/>
+<table id="configurations" data-bind="wijgrid: { data: configs }">
+</table>
+<div id="insertconfig"></div>
+

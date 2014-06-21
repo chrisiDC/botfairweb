@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="" title=""  description="" >
+
+    <siteMapNode url="default.aspx" title="Status"  description="" roles="admin" />
+    <siteMapNode url="markets.aspx" title="Markets"  description="" roles="admin" />
+    <siteMapNode url="hotmarkets.aspx" title="Hot Markets"  description="" roles="admin" />
+    <siteMapNode url="bets.aspx" title="Bets"  description="" roles="admin" />
+    <siteMapNode url="tracking.aspx" title="Tracking"  description="" roles="admin" />
+    <siteMapNode url="log.aspx" title="Log"  description="" roles="admin" />
+    <siteMapNode url="~/Account/Register.aspx" title="Register" />
+    <siteMapNode url="~/Account/ChangePassword.aspx" title="Change Password" />
+    <siteMapNode url="~/Cache.aspx?markets=markets&amp;sort=eventDate ASC" title="Market Cache" />
+    <siteMapNode url="~/Cache.aspx?markets=bets&amp;sort=fk_market ASC" title="Bet Cache" />
+    <siteMapNode url="~/Cache.aspx?markets=selections&amp;sort=marketId ASC" title="Selections Cache" />
+    <siteMapNode url="~/Cache.aspx?markets=pricetrack&amp;sort=fk_market ASC" title="PriceTrack Cache" />
+  </siteMapNode>
+</siteMap>

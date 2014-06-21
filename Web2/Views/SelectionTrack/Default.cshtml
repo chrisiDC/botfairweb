@@ -1,0 +1,46 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Default</title>
+   <!--jQuery References-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js" type="text/javascript"></script>
+
+    <!--Theme-->
+    <link href="http://cdn.wijmo.com/themes/aristo/jquery-wijmo.css" rel="stylesheet" type="text/css" title="rocket-jqueryui" />
+    <!--Wijmo Widgets CSS-->
+    <link href="http://cdn.wijmo.com/jquery.wijmo-complete.all.2.2.2.min.css" rel="stylesheet" type="text/css" />
+    <!--Wijmo Widgets JavaScript-->
+      <script src="http://cdn.wijmo.com/jquery.wijmo-open.all.2.2.2.min.js" type="text/javascript"></script>
+    <script src="http://cdn.wijmo.com/jquery.wijmo-complete.all.2.2.2.min.js" type="text/javascript"></script>
+    
+     <!--Globalization-->
+    <script src="http://cdn.wijmo.com/external/globalize.min.js" type="text/javascript"></script>
+    <script src="http://cdn.wijmo.com/external/cultures/globalize.culture.de-DE.js" type="text/javascript"></script>
+
+    <!-- KnockoutJS for MVVM-->
+    <script type="text/javascript" src="~/lib/knockout-2.2.0.js"></script>
+    <script type="text/javascript" src="~/lib/knockout.wijmo.js"></script>
+
+    <script type="text/javascript" src="~/js/selectiontrack/model.js"></script>
+    <script type="text/javascript" src="~/js/selectiontrack/selectiontrack.js"></script>
+</head>
+    <body>
+        <table>
+            <tr>
+                <td>From</td>
+                <td><input type="text" id="from" style="width: 200px" /></td>
+                <td>To</td>
+                <td><input type="text" id="to" style="width: 200px" /></td>
+                <td><button onclick="javascript:viewModel.refresh();">Refresh</button></td>
+            </tr>
+        </table>
+      
+        <div id="linechart" data-bind="wijlinechart: { showChartLabels:false,axis:axis,animation: animation,seriesList: seriesList }">
+        </div>
+    </body>
+</html>

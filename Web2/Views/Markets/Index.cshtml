@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "SelectionTrackView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    .cal
+    {
+        width: 50%;
+    }
+</style>
+<link href="~/css/markets.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="~/js/markets/model.js"></script>
+<script type="text/javascript" src="~/js/markets/markets.js"></script>
+<div id="trackers">
+</div>
+<table style="width: 100%">
+    <tr>
+         <td><div id="datefrom2" ></div></td>
+        <td>
+            <span>Show All</span><input type='checkbox' id='showall' />
+        </td>
+    </tr>
+</table>
+<div>
+    <table id="markets" data-bind="wijgrid: { data: markets }">
+    </table>
+</div>
+<div>
+    <table id="selections" data-bind="wijgrid: { data: selections }">
+    </table>
+</div>
+<div id="tracker" title="Price Tracker">
+</div>
